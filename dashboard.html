@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ludo ModX Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Material+Icons+Outlined" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(#000000, #001f1f);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #00ffcc;
+      overflow: hidden;
+    }
+
+    .login-container {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffcc;
+      text-align: center;
+      width: 320px;
+      z-index: 2;
+    }
+
+    .logo {
+      width: 100px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffcc;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: #001f1f;
+      border: none;
+      border-bottom: 2px solid #00ffcc;
+      color: #00ffcc;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      width: 100%;
+      background: linear-gradient(to right, #00ffcc, #00ffff);
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #000;
+      box-shadow: 0 0 10px #00ffff;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .icons {
+      font-size: 28px;
+      color: gold;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .forgot {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    .forgot a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="https://assets.onecompiler.app/43ea4pg72/43fcjmmpc/image.jpg%20(1)" class="logo" alt="Ludo ModX Logo">
+    <h2>Access to Ludo ModX</h2>
+    <div class="icons">
+      <span class="material-icons-outlined">verified_user</span>
+      <span class="material-icons-outlined">vpn_key</span>
+      <span class="material-icons-outlined">shield</span>
+    </div>
+    <input type="text" id="uid" placeholder="Enter UID">
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="login()">Access ModX</button>
+    <div class="forgot">
+      Forgot Password? <a href="https://t.me/U011111111" target="_blank">Click Here</a>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const uid = document.getElementById("uid").value;
+      const password = document.getElementById("password").value;
+
+      if (uid === "1472580369" && password === "modXofficial") {
+        window.location.href = "page1.html";
+      } else {
+        alert("Invalid UID or Password!");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!-- Head section এ অবশ্যই রাখুন -->
+<meta charset="UTF-8">
+
+<!-- Google Material Icons + Telegram Icon -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+<!-- Popup Styles -->
+<style>
+  .custom-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .custom-popup {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .custom-popup .material-icons-outlined {
+    font-size: 48px;
+    color: #ff9800;
+    margin-bottom: 12px;
+  }
+
+  .custom-popup h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .telegram-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background-color: #0088cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .telegram-btn:hover {
+    background-color: #006699;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 48;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 28px;
+    color: #888;
+    transition: color 0.3s ease;
+  }
+
+  .close-btn:hover {
+    color: #000;
+  }
+</style>
+
+<!-- Popup HTML -->
+<div class="custom-popup-overlay" id="popup">
+  <div class="custom-popup">
+    <span class="material-symbols-outlined close-btn" onclick="document.getElementById('popup').style.display='none'">close</span>
+    <span class="material-icons-outlined">block</span>
+    <h2>
+      আপনার একাউন্ট স্ট্যাটাস বর্তমানে <strong>Free</strong>, যা দিয়ে আপনি কাজ করতে পারবেন না।<br>
+      একাউন্টটি <strong>VIP</strong> তে কনভার্ট করুন এবং আনলিমিটেড ব্যবহার করুন।
+    </h2>
+    <a class="telegram-btn" href="https://t.me/U011111111" target="_blank">
+      <span class="material-symbols-outlined">send</span> বিস্তারিত জানতে যোগাযোগ করুন
+    </a>
+  </div>
+</div>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludo ModX Connection</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #000000, #1a1a1a);
+      color: #fff;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .input-group {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    label {
+      font-weight: 600;
+      font-size: 1.2em;
+      margin-right: 10px;
+      color: #ffcc00;
+    }
+    input {
+      width: 60%;
+      padding: 10px;
+      background: #333;
+      color: #fff;
+      border: 2px solid #ffcc00;
+      border-radius: 10px;
+      font-size: 1em;
+    }
+    .vip-icon {
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ffcc00;
+      transition: transform 0.3s;
+    }
+    .vip-icon:hover {
+      transform: scale(1.1);
+    }
+    .vip-icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .button-main {
+      background: transparent;
+      border: 2px solid #ff0000;
+      border-radius: 50px;
+      padding: 15px 50px;
+      font-size: 1.3em;
+      color: white;
+      margin: 30px auto;
+      display: inline-block;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #ff0000;
+    }
+    .button-main:hover {
+      background: #ff0000;
+    }
+    .dice-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .dice {
+      width: 80px;
+      height: 80px;
+      background: #fff;
+      border-radius: 15px;
+      padding: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ccc;
+      position: relative;
+    }
+    .dice img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="input-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" readonly>
+    </div>
+    <div class="input-group">
+      <label for="uid">UID:</label>
+      <input type="text" id="uid" readonly onclick="copyUID()">
+    </div>
+    <div class="input-group">
+      <label for="status">Status:</label>
+      <input type="text" id="status" value="Free" readonly>
+    </div><div class="vip-icon-container">
+  <img src="https://assets.onecompiler.app/43ea4pg72/43fcvuwg3/invitation.png" alt="VIP" class="vip-icon" onclick="window.location.href='payment.html'">
+</div>
+
+<div>
+  <h2 style="letter-spacing: 2px; margin-top: 30px; font-size: 1.5em;">Contact To Ludo Game</h2>
+  <div class="button-main" onclick="connectLudo()" id="contactBtn">Contact</div>
+</div>
+
+<div>
+  <h3 style="margin-top: 40px; font-size: 1.2em;">Select The Number If You Went</h3>
+  <div class="dice-container">
+    <div class="dice" onclick="vipAlert()"><img src="https://assets.onecompiler.app/43ea4pg72/43fcvuwg3/dice%20(4).png"></div>
+    <div class="dice" onclick="vipAlert()"><img src="https://assets.onecompiler.app/43ea4pg72/43fcvuwg3/dice%20(1).png"></div>
+    <div class="dice" onclick="vipAlert()"><img src="https://assets.onecompiler.app/43ea4pg72/43fcvuwg3/dice%20(5).png"></div>
+    <div class="dice" onclick="vipAlert()"><img src="https://assets.onecompiler.app/43ea4pg72/43fcvuwg3/dice%20(3).png"></div>
+    <div class="dice" onclick="vipAlert()"><img src="https://assets.onecompiler.app/43ea4pg72/43fcvuwg3/dice.png"></div>
+    <div class="dice" onclick="vipAlert()"><img src="https://assets.onecompiler.app/43ea4pg72/43fcvuwg3/dice%20(2).png"></div>
+  </div>
+</div>
+
+<footer>
+  <p>Devolopar by modX team</p>
+</footer>
+
+  </div>  <script>
+    const storedName = localStorage.getItem("ludo_name") || `Player_${Math.floor(Math.random() * 10000)}`;
+    const storedUID = localStorage.getItem("ludo_uid") || `${Math.floor(100000000 + Math.random() * 900000000)}`;
+    localStorage.setItem("ludo_name", storedName);
+    localStorage.setItem("ludo_uid", storedUID);
+    document.getElementById("name").value = storedName;
+    document.getElementById("uid").value = storedUID;
+
+    function copyUID() {
+      const uid = document.getElementById("uid").value;
+      navigator.clipboard.writeText(uid);
+      alert("UID Copied!");
+    }
+
+    function connectLudo() {
+      const confirmation = confirm("Do you want to connect Ludo ModX to your Ludo game?");
+      if (confirmation) {
+        document.getElementById("status").value = "Connected";
+        document.getElementById("contactBtn").innerText = "Contacted";
+      }
+    }
+
+    function vipAlert() {
+      alert("Please convert the account to VIP and use it unlimitedly.");
+    }
+  </script></body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModX VIP Payment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .payment-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+    }
+    h1 {
+      color: #d97706;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+    .nagad-logo {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+    select, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 1em;
+    }
+    input[readonly] {
+      background-color: #f9fafb;
+    }
+    .number-box {
+      background: #fef3c7;
+      color: #92400e;
+      padding: 12px;
+      border: 2px dashed #facc15;
+      font-size: 1.3em;
+      border-radius: 12px;
+      cursor: pointer;
+      user-select: all;
+      margin-bottom: 10px;
+    }
+    button {
+      width: 100%;
+      background: #ef4444;
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1em;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #dc2626;
+    }
+    .notice {
+      background: #fef9c3;
+      color: #854d0e;
+      padding: 15px;
+      margin-top: 25px;
+      border-radius: 12px;
+      font-size: 0.9em;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 0.85em;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-card">
+    <h1>modX Payment</h1>
+    <img src="https://assets.onecompiler.app/43ea4pg72/43eq73f47/download%20(2).png" class="nagad-logo" alt="Nagad Logo"><select id="vipPlan" onchange="updateAmount()">
+  <option value="">-- Select VIP Plan --</option>
+  <option value="1600">15 Days - ৳1600</option>
+  <option value="3000">30 Days - ৳3000</option>
+  <option value="5800">60 Days - ৳5800</option>
+</select>
+
+<input type="text" id="amount" placeholder="Amount (৳)" readonly>
+
+<h3 style="margin-top: 20px;">Send Money To</h3>
+<div class="number-box" onclick="copyNumber()">01855966005</div>
+<small>(Tap to copy number)</small>
+
+<input type="text" id="trxid" placeholder="Enter Nagad Transaction ID">
+<button onclick="submitPayment()">Submit</button>
+
+<div class="notice">
+  Select your desired plan and send the exact amount using Nagad Send Money. Enter your transaction ID and click submit to continue.
+</div>
+
+  </div>  <div class="footer">
+    Developer by ModX Team
+  </div>  <script>
+    function copyNumber() {
+      const temp = document.createElement("input");
+      temp.value = "01855966005";
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand("copy");
+      document.body.removeChild(temp);
+      alert("Number copied to clipboard!");
+    }
+
+    function updateAmount() {
+      const plan = document.getElementById("vipPlan").value;
+      const amountField = document.getElementById("amount");
+      if (plan) {
+        amountField.value = "৳" + plan;
+      } else {
+        amountField.value = "";
+      }
+    }
+
+    function submitPayment() {
+      const trxid = document.getElementById("trxid").value.trim();
+      const plan = document.getElementById("vipPlan").value;
+      if (!plan) {
+        alert("Please select a VIP plan.");
+        return;
+      }
+      if (trxid.length < 8) {
+        alert("Please enter a valid Nagad Transaction ID.");
+      } else {
+        window.location.href = "verify.html";
+      }
+    }
+  </script></body>
+</html>
